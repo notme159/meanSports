@@ -4,6 +4,6 @@ angular.module('app').controller('mvCourseDetailCtrl', function($scope, mvCached
       if(course._id === $routeParams.id) {
         $scope.course = course;
       }
-    })
-  })
+    });
+  });
 });

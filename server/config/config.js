@@ -12,4 +12,4 @@ module.exports = {
     db: 'mongodb://jeames:multivision@ds053178.mongolab.com:53178/multivision',
     port: process.env.PORT || 80
   }
-}
+};

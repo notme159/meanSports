@@ -37,7 +37,7 @@ function createDefaultUsers() {
       hash = encrypt.hashPwd(salt, 'jojo@gmail.com');
       User.create({firstName:'Joj',lastName:'Koll',username:'joj@gmail.com', salt: salt, hashed_pwd: hash});
     }
-  })
-};
+  });
+}
 
 exports.createDefaultUsers = createDefaultUsers;

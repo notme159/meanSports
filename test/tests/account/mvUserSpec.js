@@ -12,6 +12,6 @@ describe('mvUser', function() {
       var user = new mvUser();
       user.roles = ['admin'];
       expect(user.isAdmin()).to.be.true;
-    }))
-  })
-})
+    }));
+  });
+});
