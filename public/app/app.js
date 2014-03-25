@@ -8,7 +8,7 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
     user: {auth: function(mvAuth) {
       return mvAuth.authorizeAuthenticatedUserForRoute()
     }}
-  }
+  };
 
   $locationProvider.html5Mode(true);
   $routeProvider
@@ -27,7 +27,7 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
     })
     .when('/courses/:id', { templateUrl: '/partials/courses/course-details',
       controller: 'mvCourseDetailCtrl'
-    })
+    });
 
 });
 
@@ -36,5 +36,5 @@ angular.module('app').run(function($rootScope, $location) {
     if(rejection === 'not authorized') {
       $location.path('/');
     }
-  })
-})
+  });
+});
