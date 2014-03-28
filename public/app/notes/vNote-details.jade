@@ -1,0 +1,11 @@
+.container
+  .row
+    .col-md-6
+      .panel.panel-primary
+        .panel-heading {{note.noteName}}
+        .panel-body
+          h3 {{note.noteContent}}
+          .pull-left.badge Modified on {{note.dateModified | date}}
+          .pull-right.badge Published on {{note.dateCreated | date}}
+    .col-md-6
+    //- pravej sloupec nejaky buttony na delete treba

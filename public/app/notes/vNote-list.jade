@@ -1,0 +1,11 @@
+.container.top-padding-med
+  table.table.table-hover.table-striped.table-condensed
+    thead
+      tr
+        th Name
+        th Created
+    tbody
+      tr(ng-repeat="note in notes")
+        td
+          a(href="/notes/{{note._id}}") {{note.noteName}}
+        td {{note.dateCreated | date}}

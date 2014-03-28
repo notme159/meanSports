@@ -12,7 +12,12 @@ block main-content
             a(href="/") Home
           li
             a(href="/courses") Courses
-        div(ng-include="'/partials/account/navbar-login'")
+          li
+            a(href="/notes") Notes
+          li
+            a(href="/createNote") Create Note
+
+        div(ng-include="'/partials/account/vNavbar-login'")
 
   section.content
     div(ng-view)

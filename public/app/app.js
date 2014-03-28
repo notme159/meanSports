@@ -3,32 +3,41 @@ angular.module('app', ['ngResource', 'ngRoute']);
 angular.module('app').config(function($routeProvider, $locationProvider) {
   var routeRoleChecks = {
     admin: {auth: function(mvAuth) {
-      return mvAuth.authorizeCurrentUserForRoute('admin')
+      return mvAuth.authorizeCurrentUserForRoute('admin');
     }},
     user: {auth: function(mvAuth) {
-      return mvAuth.authorizeAuthenticatedUserForRoute()
+      return mvAuth.authorizeAuthenticatedUserForRoute();
     }}
   };
 
   $locationProvider.html5Mode(true);
   $routeProvider
-    .when('/', { templateUrl: '/partials/main/main', controller: 'mvMainCtrl'})
-    .when('/admin/users', { templateUrl: '/partials/admin/user-list',
+    .when('/', { templateUrl: '/partials/main/vMain',
+      controller: 'mvMainCtrl'})
+    .when('/admin/users', { templateUrl: '/partials/admin/vUser-list',
       controller: 'mvUserListCtrl', resolve: routeRoleChecks.admin
     })
-    .when('/signup', { templateUrl: '/partials/account/signup',
+    .when('/signup', { templateUrl: '/partials/account/vSignup',
       controller: 'mvSignupCtrl'
     })
-    .when('/profile', { templateUrl: '/partials/account/profile',
+    .when('/profile', { templateUrl: '/partials/account/vProfile',
       controller: 'mvProfileCtrl', resolve: routeRoleChecks.user
     })
-    .when('/courses', { templateUrl: '/partials/courses/course-list',
+    .when('/courses', { templateUrl: '/partials/courses/vCourse-list',
       controller: 'mvCourseListCtrl'
     })
-    .when('/courses/:id', { templateUrl: '/partials/courses/course-details',
+    .when('/courses/:id', { templateUrl: '/partials/courses/vCourse-details',
       controller: 'mvCourseDetailCtrl'
+    })
+    .when('/notes', { templateUrl: '/partials/notes/vNote-list',
+      controller: 'mvNoteListCtrl'
+    })
+    .when('/notes/:id', { templateUrl: '/partials/notes/vNote-details',
+      controller: 'mvNoteDetailCtrl'
+    })
+    .when('/createNote', {templateUrl: '/partials/notes/vNote-create',
+      controller: 'mvNoteCreateCtrl'
     });
-
 });
 
 angular.module('app').run(function($rootScope, $location) {

@@ -21,7 +21,9 @@ exports.createUser = function(req, res, next) {
       return res.send({reason:err.toString()});
     }
     req.logIn(user, function(err) {
-      if(err) {return next(err);}
+      if(err) {
+        return next(err);
+      }
       res.send(user);
     });
   });
