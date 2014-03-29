@@ -17,6 +17,7 @@ module.exports = function(app) {
   app.get('/api/notes', notes.getNotes);
   app.get('/api/notes/:id', notes.getNoteById);
   app.post('/api/notes', notes.createNote);
+  app.delete('/api/notes/:id', notes.deleteNote);
 
   app.get('/partials/*', function(req, res) {
     res.render('../../public/app/' + req.params);

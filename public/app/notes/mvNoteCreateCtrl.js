@@ -1,11 +1,11 @@
-angular.module('app').controller('mvNoteCreateCtrl', function ($scope, mvNoteCreator, mvNotifier, $location) {
+angular.module('app').controller('mvNoteCreateCtrl', function ($scope, mvNoteModificator, mvNotifier, $location) {
   $scope.createNewNote = function () {
     var newNoteData = {
       noteName: $scope.noteName,
       noteContent: $scope.noteContent
     };
 
-    mvNoteCreator.createNote(newNoteData).then(function () {
+    mvNoteModificator.createNote(newNoteData).then(function () {
       mvNotifier.notify('Note created!');
       $location.path('/notes');
     }, function (reason) {

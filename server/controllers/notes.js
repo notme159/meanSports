@@ -14,12 +14,21 @@ exports.getNoteById = function(req, res) {
 
 exports.createNote = function(req, res, next) {
   var noteData = req.body;
-  console.log(noteData);
   Note.create(noteData, function (err, note) {
     if (err) {
       res.status(400);
       return res.send({reason: err.toString()});
     }
     res.send(note);
+  });
+};
+
+exports.deleteNote = function(req, res, next) {
+  Note.remove({_id: req.params.id}, function (err, note) {
+    if (err) {
+      res.status(400);
+      return res.send({reason: err.toString()});
+    }
+    res.send(true);
   });
 };
