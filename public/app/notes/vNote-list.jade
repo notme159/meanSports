@@ -3,9 +3,19 @@
     thead
       tr
         th Name
+        th Content
         th Created
+        th Modified
+        th id (docasne)
     tbody
       tr(ng-repeat="note in notes")
         td
           a(href="/notes/{{note._id}}") {{note.noteName}}
-        td {{note.dateCreated | date}}
+        td
+          {{note.noteContent}}
+        td
+          {{note.dateCreated | date}}
+        td
+          {{note.dateModified | date}}
+        td
+          {{note._id}}

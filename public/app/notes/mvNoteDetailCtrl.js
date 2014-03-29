@@ -4,7 +4,7 @@ angular.module('app').controller('mvNoteDetailCtrl', function ($scope, $routePar
   $scope.deleteOldNote = function () {
     mvNoteModificator.deleteNote({_id: $routeParams.id}).then(function () {
       mvNotifier.notify('Note deleted');
-      
+
     }, function (reason) {
       mvNotifier.error(reason);
     });
