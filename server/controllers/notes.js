@@ -32,3 +32,17 @@ exports.deleteNote = function(req, res, next) {
     res.send(true);
   });
 };
+
+exports.updateNote = function(req, res, next) {
+  Note.find()
+  // query podle id
+  // update note
+  // reload pak na /notes at vidim zmeny hned
+  Note.update({_id: req.params.id}, {noteContent: req.body.noteContent}, function (err, note) {
+    if (err) {
+      res.status(400);
+      return res.send({reason: err.toString()});
+    }
+    res.send(true);
+  });
+};

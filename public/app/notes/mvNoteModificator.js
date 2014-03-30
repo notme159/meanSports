@@ -21,7 +21,17 @@ angular.module('app').factory('mvNoteModificator', function (mvNote, $q) {
         dfd.reject(response.data.reason);
       });
       return dfd.promise;
+    },
+    updateNote: function (note) {
+      var newNote = new mvNote(note);
+      console.log(newNote);
+      var dfd = $q.defer();
+      newNote.$update(note).then(function () {
+        dfd.resolve();
+      }, function (response) {
+        dfd.reject(response.data.reason);
+      });
+      return dfd.promise;
     }
-
   };
 });

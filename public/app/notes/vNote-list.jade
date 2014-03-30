@@ -12,10 +12,14 @@
         td
           a(href="/notes/{{note._id}}") {{note.noteName}}
         td
-          {{note.noteContent}}
+          textarea.form-control(name="noteContent", type="textarea", rows="3", placeholder="Content", ng-model="note.noteContent", required) {{note.noteContent}}
         td
           {{note.dateCreated | date}}
         td
           {{note.dateModified | date}}
         td
           {{note._id}}
+        td
+          button.btn.btn-primary(ng-click="deleteOldNote(note._id)", ) Delete
+        td
+          button.btn.btn-primary(ng-click="editOldNote(note)", ) Save edit
