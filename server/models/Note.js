@@ -11,9 +11,9 @@ var Note = mongoose.model('Note', noteSchema);
 function createDefaultNotes() {
     Note.find({}).exec(function(err, collection) {
         if(collection.length === 0) {
-          Note.create({noteName: 'Welcome', noteContent: 'Welcome to note everywhere! If you..'});
-          Note.create({noteName: 'Welcome2', noteContent: 'Welcome2 to note everywhere! If you..'});
-          Note.create({noteName: 'Welcome3', noteContent: 'Welcome3 to note everywhere! If you..'});
+          Note.create({noteName: 'Welcome', noteContent: 'Training lounge announcements! If you..111'});
+          Note.create({noteName: 'Welcome2', noteContent: 'Training lounge! If you..22'});
+          Note.create({noteName: 'Welcome3', noteContent: 'Training lounge! If you..33'});
         }
     });
 }

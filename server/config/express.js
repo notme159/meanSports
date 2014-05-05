@@ -16,7 +16,7 @@ module.exports = function(app, config) {
     app.use(express.json());
     app.use(express.urlencoded());
     // app.use(express.bodyParser());
-    app.use(express.session({secret: 'multi vision unicorns'}));
+    app.use(express.session({secret: 'nemame slehacku'}));
     app.use(passport.initialize());
     app.use(passport.session());
     app.use(stylus.middleware(
