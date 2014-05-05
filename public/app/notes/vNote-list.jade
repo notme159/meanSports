@@ -1,3 +1,22 @@
+.container
+  .well
+    form.form-horizontal(name="createNoteForm")
+      fieldset
+        legend Enter new note
+        .form-group
+          label.col-md-2.control-label(for="noteName") Name
+          .col-md-8
+            input.form-control(name="noteName", type="text", placeholder="Name", ng-model="noteName", required)
+        .form-group
+          label.col-md-2.control-label(for="noteContent") Content
+          .col-md-8
+            textarea.form-control(name="noteContent", type="textarea", rows="2", placeholder="Content", ng-model="noteContent", required)
+        .form-group
+          .col-md-10.col-md-offset-2
+            .pull-right
+              button.btn.btn-primary(ng-click="createNewNote()", ng-disabled="createNoteForm.$invalid") Add note
+              | &nbsp;
+              a.btn.btn-default(ng-click="cleanInputs()") Cancel
 .container.top-padding-med
   table.table.table-hover.table-striped.table-condensed
     thead

@@ -16,4 +16,20 @@ angular.module('app').controller('mvNoteListCtrl', function ($scope, mvNote, mvN
       mvNotifier.error(reason);
     });
   };
+  $scope.createNewNote = function () {
+    var newNoteData = {
+      noteName: $scope.noteName,
+      noteContent: $scope.noteContent
+    };
+    mvNoteModificator.createNote(newNoteData).then(function () {
+      mvNotifier.notify('Note created!');
+    }, function (reason) {
+      mvNotifier.error(reason);
+    });
+    $route.reload();
+  };
+  $scope.cleanInputs = function () {
+    $scope.noteName = '';
+    $scope.noteContent = '';
+  };
 });

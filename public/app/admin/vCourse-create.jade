@@ -10,7 +10,7 @@
         .form-group
           label.col-md-2.control-label(for="featured") Featured
           .col-md-10
-            input.form-control(name="featured", type="checkbox", value="featuredOption", ng-model="featured", required)
+            input.form-control(name="featured", type="checkbox", value="featuredOption", ng-model="featured")
         .form-group
           label.col-md-2.control-label(for="published") Published
           .col-md-10
@@ -22,6 +22,6 @@
         .form-group
           .col-md-10.col-md-offset-2
             .pull-right
-              button.btn.btn-primary(ng-click="createNewCourse()", ng-disabled="createNoteForm.$invalid") Add course
+              button.btn.btn-primary(ng-click="createNewCourse()", ng-disabled="createCourseForm.$invalid") Add course
               | &nbsp;
               a.btn.btn-default(ng-click="cleanInputs()") Cancel

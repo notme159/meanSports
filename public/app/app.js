@@ -36,9 +36,6 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
     })
     .when('/notes/:id', { templateUrl: '/partials/notes/vNote-details',
       controller: 'mvNoteDetailCtrl'
-    })
-    .when('/createNote', {templateUrl: '/partials/notes/vNote-create',
-      controller: 'mvNoteCreateCtrl'
     });
 });
 
