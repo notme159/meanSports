@@ -13,6 +13,7 @@ module.exports = function(app) {
 
   app.get('/api/courses', courses.getCourses);
   app.get('/api/courses/:id', courses.getCourseById);
+  app.post('/api/courses', courses.createCourse);
 
   app.get('/api/notes', notes.getNotes);
   app.get('/api/notes/:id', notes.getNoteById);

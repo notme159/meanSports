@@ -12,3 +12,14 @@ exports.getCourseById = function(req, res) {
   });
 };
 
+exports.createCourse = function(req, res, next) {
+    var courseData = req.body;
+    Course.create(courseData, function (err, course) {
+        if (err) {
+            res.status(400);
+            return res.send({reason: err.toString()});
+        }
+        res.send(course);
+    });
+};
+

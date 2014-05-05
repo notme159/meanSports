@@ -1,0 +1,27 @@
+.container
+  .well
+    form.form-horizontal(name="createCourseForm")
+      fieldset
+        legend Enter new Course
+        .form-group
+          label.col-md-2.control-label(for="title") Title
+          .col-md-10
+            input.form-control(name="title", type="text", placeholder="title", ng-model="title", required)
+        .form-group
+          label.col-md-2.control-label(for="featured") Featured
+          .col-md-10
+            input.form-control(name="featured", type="checkbox", value="featuredOption", ng-model="featured", required)
+        .form-group
+          label.col-md-2.control-label(for="published") Published
+          .col-md-10
+            input.form-control(name="published", type="date", placeholder="published", ng-model="published", required)
+        .form-group
+          label.col-md-2.control-label(for="tags") Tags
+          .col-md-10
+            input.form-control(name="tags", type="text", placeholder="tags ex. java, ruby, html", ng-model="tags", required)
+        .form-group
+          .col-md-10.col-md-offset-2
+            .pull-right
+              button.btn.btn-primary(ng-click="createNewCourse()", ng-disabled="createNoteForm.$invalid") Add course
+              | &nbsp;
+              a.btn.btn-default(ng-click="cleanInputs()") Cancel

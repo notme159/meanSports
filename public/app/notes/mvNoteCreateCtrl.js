@@ -7,7 +7,7 @@ angular.module('app').controller('mvNoteCreateCtrl', function ($scope, mvNoteMod
 
     mvNoteModificator.createNote(newNoteData).then(function () {
       mvNotifier.notify('Note created!');
-      $location.path('/notes');
+      //$location.path('/notes');
     }, function (reason) {
       mvNotifier.error(reason);
     });
