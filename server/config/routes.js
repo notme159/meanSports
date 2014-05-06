@@ -2,6 +2,7 @@ var auth = require('./auth'),
   users = require('../controllers/users'),
   courses = require('../controllers/courses'),
   notes = require('../controllers/notes'),
+  //applications = require('../controllers/applications')
   mongoose = require('mongoose'),
   User = mongoose.model('User');
 
@@ -20,6 +21,10 @@ module.exports = function(app) {
   app.post('/api/notes', notes.createNote);
   app.delete('/api/notes/:id', notes.deleteNote);
   app.put('/api/notes/:id', notes.updateNote);
+
+  /*app.get('/api/applications', applications.getApplications);
+  app.get('/api/applications/:id', applications.getApplicationById);
+  app.post('/api/applications', applications.createApplication);*/
 
   app.get('/partials/*', function(req, res) {
     res.render('../../public/app/' + req.params);
