@@ -15,6 +15,7 @@ function createDefaultCourses() {
       Course.create({title: 'Java for noobs', featured: true, published: new Date('12/15/2013'), tags: ['Java']});
       Course.create({title: 'JavaScript pr0s', featured: true, published: new Date('1/13/2013'), tags: ['JS', 'web']});
       Course.create({title: 'Comedy', featured: false, published: new Date('1/1/2013'), tags: ['Acting']});
+      Course.create({title: 'Drama', featured: true, published: new Date('1/3/2014'), tags: ['Drama', 'Shae']});
     }
   });
 }
