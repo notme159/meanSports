@@ -10,5 +10,13 @@
         .panel-heading Tags
         .panel-body
           div(ng-repeat="tag in course.tags") {{tag}}
+  .panel.panel-primary
+    .panel-heading Participants
+    .panel-body MockJohn Doe 11/11/2013
+      //div(ng-repeat="tag in course.tags") {{tag}}
+
   .pull-right
-    button.btn.btn-primary(ng-click="deleteOldNote()", ) Přihlásit
+    button.btn.btn-primary(ng-click="signToCourse()", ) Sign Up
+    | &nbsp;
+    button.btn.btn-primary(ng-click="showParticipants()", ) Show Participants
+    //a(href="/courses/{{course._id}}/course-appls") Participants

@@ -1,4 +1,4 @@
-angular.module('app').factory('mvCourseModificator', function (mvCourse, $q) {
+angular.module('app').factory('mvCourseModificator', function (mvCourse, mvCourseAppl, $q) {
   return {
     createCourse: function (newCourseData) {
       var newCourse = new mvCourse(newCourseData);
@@ -9,6 +9,17 @@ angular.module('app').factory('mvCourseModificator', function (mvCourse, $q) {
         dfd.reject(response.data.reason);
       });
       return dfd.promise;
+    },
+    signToCourse: function (courseApplData) {
+      var newCourseAppl = new mvCourseAppl(courseApplData);
+      var dfd = $q.defer();
+      newCourseAppl.$save().then(function () {
+        dfd.resolve();
+      }, function (response) {
+        dfd.reject(response.data.reason);
+      });
+      return dfd.promise;
+
     }/*,
 
     deleteNote: function (id) {

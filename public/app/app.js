@@ -1,11 +1,11 @@
 angular.module('app', ['ngResource', 'ngRoute']);
 
-angular.module('app').config(function($routeProvider, $locationProvider) {
+angular.module('app').config(function ($routeProvider, $locationProvider) {
   var routeRoleChecks = {
-    admin: {auth: function(mvAuth) {
+    admin: {auth: function (mvAuth) {
       return mvAuth.authorizeCurrentUserForRoute('admin');
     }},
-    user: {auth: function(mvAuth) {
+    user: {auth: function (mvAuth) {
       return mvAuth.authorizeAuthenticatedUserForRoute();
     }}
   };
@@ -17,7 +17,7 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
     .when('/admin/users', { templateUrl: '/partials/admin/vUser-list',
       controller: 'mvUserListCtrl', resolve: routeRoleChecks.admin
     }).when('/admin/addCourse', { templateUrl: '/partials/admin/vCourse-create',
-        controller: 'mvCourseCreateCtrl', resolve: routeRoleChecks.admin
+      controller: 'mvCourseCreateCtrl', resolve: routeRoleChecks.admin
     })
     .when('/signup', { templateUrl: '/partials/account/vSignup',
       controller: 'mvSignupCtrl'
@@ -39,9 +39,9 @@ angular.module('app').config(function($routeProvider, $locationProvider) {
     });
 });
 
-angular.module('app').run(function($rootScope, $location) {
-  $rootScope.$on('$routeChangeError', function(evt, current, previous, rejection) {
-    if(rejection === 'not authorized') {
+angular.module('app').run(function ($rootScope, $location) {
+  $rootScope.$on('$routeChangeError', function (evt, current, previous, rejection) {
+    if (rejection === 'not authorized') {
       $location.path('/');
     }
   });

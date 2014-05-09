@@ -1,5 +1,6 @@
 angular.module('app').controller('mvNoteListCtrl', function ($scope, mvNote, mvNoteModificator, mvNotifier, $route) {
   $scope.notes = mvNote.query();
+  console.log($scope.notes);
   $scope.deleteOldNote = function (id) {
     mvNoteModificator.deleteNote({_id: id}).then(function () {
       mvNotifier.notify('Note deleted');
