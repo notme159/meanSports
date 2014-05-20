@@ -1,4 +1,4 @@
-angular.module('app').controller('mvCourseDetailCtrl', function ($scope, mvCourse, $routeParams, mvIdentity, mvCourseModificator, mvNotifier, mvCourseAppl, mvCourseApplOfCourse) {
+angular.module('app').controller('mvCourseDetailCtrl', function ($scope, mvCourse, $routeParams, mvIdentity, mvCourseModificator, mvNotifier, Restangular, mvCourseApplOfCourse) {
   $scope.course = mvCourse.get({_id: $routeParams.id});
   //get courseappl by course id
   //$scope.courseAppls = mvCourseAppl.get();
@@ -11,23 +11,20 @@ angular.module('app').controller('mvCourseDetailCtrl', function ($scope, mvCours
     //pro create courseappl
     //osetrit pokud je user pokud ne redirect na login asi
 
-    var userId = mvIdentity.currentUser.username;
-    var courseId = $scope.course.title;
-    console.log("user id = " + userId);
-    console.log("course id = " + courseId);
+    var userId = mvIdentity.currentUser._id;
+    var courseId = $scope.course._id;
+
+    console.log("user id = " + JSON.stringify(mvIdentity.currentUser, null, 4));
+    console.log("course id = " + JSON.stringify($scope.course, null, 4));
 
     mvCourseModificator.signToCourse({userId: userId, courseId: courseId, signed: new Date()}).then(function () {
-      mvNotifier.notify('Signed to ' + courseId);
+      mvNotifier.notify('Signed to ' + $scope.course.title);
     }, function (reason) {
       mvNotifier.error(reason);
     });
   }
 
-  $scope.showParticipants = function () {
-    $scope.courseAppls = mvCourseAppl.query({_id: $routeParams.id});
-    console.log($scope.courseAppls);
-
-  }
+  $scope.courseAppls = mvCourseApplOfCourse.showParticipants();
 
 
 });

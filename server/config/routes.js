@@ -8,6 +8,28 @@ var auth = require('./auth'),
 
 module.exports = function(app) {
 
+  app.get('/api/testing', testFunc);
+
+  function testFunc(req, res) {
+    res.send({test: "bro"});
+  }
+
+  app.get('/api/testing/:idtesting', testFuncSId);
+
+  function testFuncSId(req, res) {
+
+    res.send({testSId: req.params.idtesting});
+  }
+
+  app.get('/api/testing/:id/nono', testFuncSId);
+
+  function testFuncSId(req, res) {
+
+    res.send([{testSId: req.params.id}, {testSId2: req.params.id}]);
+  }
+
+
+
   app.get('/api/users', auth.requiresRole('admin'), users.getUsers);
   app.post('/api/users', users.createUser);
   app.put('/api/users', users.updateUser);
@@ -23,7 +45,7 @@ module.exports = function(app) {
   app.put('/api/notes/:id', notes.updateNote);
 
   app.get('/api/course-appls', courseAppls.getCourseAppls);
-  app.get('/api/courses/:courseId/course-appls', courseAppls.getCourseApplsByCourse);
+  app.get('/api/courses/:courseId/course-appls', courseAppls.getCourseApplsByCourseId);
   app.get('/api/course-appls/:id', courseAppls.getCourseApplById);
   app.post('/api/course-appls', courseAppls.createCourseAppl);
 

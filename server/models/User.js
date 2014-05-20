@@ -48,8 +48,8 @@ function createDefaultUsers() {
       hash = encrypt.hashPwd(salt, 'tony');
       User.create({firstName: 'Tony', lastName: 'Holler', username: 'tony@gmail.com', salt: salt, hashed_pwd: hash});
       salt = encrypt.createSalt();
-      hash = encrypt.hashPwd(salt, 'bro');
-      User.create({firstName: 'George', lastName: 'Duffle', username: 'bro', salt: salt, hashed_pwd: hash});
+      hash = encrypt.hashPwd(salt, 'george');
+      User.create({firstName: 'George', lastName: 'Duffle', username: 'george@gmail.com', salt: salt, hashed_pwd: hash});
       salt = encrypt.createSalt();
       hash = encrypt.hashPwd(salt, 'veronica');
       User.create({firstName: 'Veronica', lastName: 'Slatova', username: 'veronica@gmail.com', salt: salt, hashed_pwd: hash});
