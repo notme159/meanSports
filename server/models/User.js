@@ -7,7 +7,8 @@ var userSchema = mongoose.Schema({
   username: {type: String, required: '{PATH} is required!', unique: true},
   salt: {type: String, required: '{PATH} is required!'},
   hashed_pwd: {type: String, required: '{PATH} is required!'},
-  roles: [String]
+  roles: [String],
+  courseAppls: [mongoose.Schema.Types.ObjectId]
 });
 userSchema.methods = {
   authenticate: function (passwordToMatch) {
@@ -22,17 +23,18 @@ var User = mongoose.model('User', userSchema);
 function createDefaultUsers() {
   User.find({}).exec(function (err, collection) {
     if (collection.length === 0) {
+      // aa - admin, jenna and joj - user
       var salt, hash;
       salt = encrypt.createSalt();
       hash = encrypt.hashPwd(salt, 'aa');
-      User.create({firstName: 'John', lastName: 'Doe', username: 'aa', salt: salt, hashed_pwd: hash, roles: ['admin']});
+      User.create({firstName: 'John', lastName: 'Doe', username: 'aa', salt: salt, hashed_pwd: hash, roles: ['admin'], courseAppls: []});
       salt = encrypt.createSalt();
       hash = encrypt.hashPwd(salt, 'jenna');
-      User.create({firstName: 'Jenna', lastName: 'Sousa', username: 'jenna@gmail.com', salt: salt, hashed_pwd: hash, roles: []});
+      User.create({firstName: 'Jenna', lastName: 'Sousa', username: 'jenna', salt: salt, hashed_pwd: hash, roles: [], courseAppls: []});
       salt = encrypt.createSalt();
       hash = encrypt.hashPwd(salt, 'joj');
-      User.create({firstName: 'Joj', lastName: 'Koll', username: 'joj@gmail.com', salt: salt, hashed_pwd: hash});
-      salt = encrypt.createSalt();
+      User.create({firstName: 'Joj', lastName: 'Koll', username: 'joj', salt: salt, hashed_pwd: hash, roles: [], courseAppls: []});
+      /*salt = encrypt.createSalt();
       hash = encrypt.hashPwd(salt, 'bob');
       User.create({firstName: 'Bob', lastName: 'Venica', username: 'bob@gmail.com', salt: salt, hashed_pwd: hash});
       salt = encrypt.createSalt();
@@ -52,7 +54,7 @@ function createDefaultUsers() {
       User.create({firstName: 'George', lastName: 'Duffle', username: 'george@gmail.com', salt: salt, hashed_pwd: hash});
       salt = encrypt.createSalt();
       hash = encrypt.hashPwd(salt, 'veronica');
-      User.create({firstName: 'Veronica', lastName: 'Slatova', username: 'veronica@gmail.com', salt: salt, hashed_pwd: hash});
+      User.create({firstName: 'Veronica', lastName: 'Slatova', username: 'veronica@gmail.com', salt: salt, hashed_pwd: hash});*/
     }
   });
 }

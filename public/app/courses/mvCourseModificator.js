@@ -11,6 +11,9 @@ angular.module('app').factory('mvCourseModificator', function (mvCourse, mvCours
       return dfd.promise;
     },
     signToCourse: function (courseApplData) {
+      // create courseappl
+      // update user push to array courseappl
+      // update course push to array courseappl
       var newCourseAppl = new mvCourseAppl(courseApplData);
       var dfd = $q.defer();
       newCourseAppl.$save().then(function () {

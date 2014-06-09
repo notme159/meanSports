@@ -24,7 +24,8 @@ angular.module('app').controller('mvCourseDetailCtrl', function ($scope, mvCours
     });
   }
 
-  $scope.courseAppls = mvCourseApplOfCourse.showParticipants();
+  // implement as function, click to call
+  //$scope.courseAppls = mvCourseApplOfCourse.showParticipants();
 
 
 });
