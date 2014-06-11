@@ -23,20 +23,21 @@ var User = mongoose.model('User', userSchema);
 function createDefaultUsers() {
   User.find({}).exec(function (err, collection) {
     if (collection.length === 0) {
-      // aa - admin, jenna and joj - user
+      // aa - admin, qq, ww, ee - user
       var salt, hash;
       salt = encrypt.createSalt();
       hash = encrypt.hashPwd(salt, 'aa');
       User.create({firstName: 'John', lastName: 'Doe', username: 'aa', salt: salt, hashed_pwd: hash, roles: ['admin'], courseAppls: []});
       salt = encrypt.createSalt();
-      hash = encrypt.hashPwd(salt, 'jenna');
-      User.create({firstName: 'Jenna', lastName: 'Sousa', username: 'jenna', salt: salt, hashed_pwd: hash, roles: [], courseAppls: []});
+      hash = encrypt.hashPwd(salt, 'qq');
+      User.create({firstName: 'Jenna', lastName: 'Sousa', username: 'qq', salt: salt, hashed_pwd: hash, roles: [], courseAppls: []});
       salt = encrypt.createSalt();
-      hash = encrypt.hashPwd(salt, 'joj');
-      User.create({firstName: 'Joj', lastName: 'Koll', username: 'joj', salt: salt, hashed_pwd: hash, roles: [], courseAppls: []});
-      /*salt = encrypt.createSalt();
-      hash = encrypt.hashPwd(salt, 'bob');
-      User.create({firstName: 'Bob', lastName: 'Venica', username: 'bob@gmail.com', salt: salt, hashed_pwd: hash});
+      hash = encrypt.hashPwd(salt, 'ww');
+      User.create({firstName: 'Joj', lastName: 'Joice', username: 'ww', salt: salt, hashed_pwd: hash, roles: [], courseAppls: []});
+      salt = encrypt.createSalt();
+      hash = encrypt.hashPwd(salt, 'ee');
+      User.create({firstName: 'Bob', lastName: 'Venica', username: 'ee', salt: salt, hashed_pwd: hash});
+      /*
       salt = encrypt.createSalt();
       hash = encrypt.hashPwd(salt, 'penny');
       User.create({firstName: 'Penny', lastName: 'Lordo', username: 'penny@gmail.com', salt: salt, hashed_pwd: hash});

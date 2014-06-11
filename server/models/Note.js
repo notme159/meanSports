@@ -15,13 +15,6 @@ function createDefaultNotes() {
           Note.create({noteName: 'Welcome1', noteContent: 'Training lounge announcements1'});
           Note.create({noteName: 'Welcome2', noteContent: 'Training lounge announcements2'});
           Note.create({noteName: 'Welcome3', noteContent: 'Training lounge announcements3'});
-          Note.create({noteName: 'Welcome4', noteContent: 'Training lounge announcements4'});
-          Note.create({noteName: 'Welcome5', noteContent: 'Training lounge announcements5'});
-          Note.create({noteName: 'Welcome6', noteContent: 'Training lounge announcements6'});
-          Note.create({noteName: 'Welcome7', noteContent: 'Training lounge announcements7'});
-          Note.create({noteName: 'Welcome8', noteContent: 'Training lounge announcements8'});
-          Note.create({noteName: 'Welcome9', noteContent: 'Training lounge announcements9'});
-          Note.create({noteName: 'Welcome10', noteContent: 'Training lounge announcements10'});
         }
     });
 }

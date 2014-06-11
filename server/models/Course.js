@@ -14,9 +14,12 @@ var Course = mongoose.model('Course', courseSchema);
 function createDefaultCourses() {
   Course.find({}).exec(function (err, collection) {
     if (collection.length === 0) {
-      Course.create({title: 'Soccer for beginners', featured: true, published: new Date('1/1/2014'), tags: ['Ball game', 'Outdoors'], courseAppls: []});
-      Course.create({title: 'Tennis for beginners', featured: false, published: new Date('1/15/2014'), tags: ['Outdoors'], courseAppls: []});
-      Course.create({title: 'Advanced Squash', featured: false, published: new Date('1/25/2014'), tags: ['Indoors'], courseAppls: []});
+      Course.create({title: 'Soccer for beginners', featured: true, published: new Date('1/1/2014'), tags: ['Outdoors', 'Ball game'], courseAppls: []});
+      Course.create({title: 'Tennis for beginners', featured: false, published: new Date('1/15/2014'), tags: ['Outdoors', 'Rocket'], courseAppls: []});
+      Course.create({title: 'Advanced Squash', featured: false, published: new Date('1/25/2014'), tags: ['Indoors', 'Rocket'], courseAppls: []});
+      Course.create({title: 'Advanced Swimming', featured: true, published: new Date('1/25/2014'), tags: ['Indoors', 'Water'], courseAppls: []});
+      Course.create({title: 'Advanced Calisthenics', featured: false, published: new Date('1/25/2014'), tags: ['Indoors', 'No equipment'], courseAppls: []});
+      Course.create({title: 'Calisthenics for beginners', featured: true, published: new Date('1/25/2014'), tags: ['Outdoors', 'No equipment'], courseAppls: []});
 
       /*Course.create({title: 'Java for beginners', featured: false, published: new Date('12/15/2013'), tags: ['Java', 'Programming']});
       Course.create({title: 'JavaScript for Professionals', featured: true, published: new Date('1/13/2013'), tags: ['JS', 'web', 'Programming']});

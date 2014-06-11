@@ -14,4 +14,4 @@
       p course title: {{courseAppl.courseId.title}}
       p featured: {{courseAppl.courseId.featured}}
       p published: {{courseAppl.courseId.published | date:'medium'}}
-      div(ng-repeat="tag in courseAppl.courseId.tags") Tags: {{tag}}
+      span(ng-repeat="tag in courseAppl.courseId.tags"){{tag}} &nbsp
