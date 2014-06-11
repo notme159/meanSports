@@ -25,8 +25,11 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
     .when('/profile', { templateUrl: '/partials/account/vProfile',
       controller: 'mvProfileCtrl', resolve: routeRoleChecks.user
     })
-    .when('/course-appls', {templateUrl: '/partials/account/vCourse-appls',
-    controller: 'mvCourseApplsCtrl', resolve: routeRoleChecks.user
+    .when('/course-appls', {templateUrl: '/partials/account/vCourse-appl-list',
+    controller: 'mvCourseApplListCtrl', resolve: routeRoleChecks.user
+    })
+    .when('/course-appls/:id', {templateUrl: '/partials/account/vCourse-appl-details',
+      controller: 'mvCourseApplDetailCtrl', resolve: routeRoleChecks.user
     })
     .when('/courses', { templateUrl: '/partials/courses/vCourse-list',
       controller: 'mvCourseListCtrl'

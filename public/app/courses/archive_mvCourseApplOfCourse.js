@@ -41,7 +41,7 @@
  }
  }
  }]);*/
-angular.module('app').factory('mvCourseApplOfCourse', function (Restangular, $routeParams) {
+/*angular.module('app').factory('mvCourseApplOfCourse', function (Restangular, $routeParams) {
   return {
     showParticipants: function () {
       var restAngular = Restangular.withConfig(function (Configurer) {
@@ -60,3 +60,4 @@ angular.module('app').factory('mvCourseApplOfCourse', function (Restangular, $ro
     }
   }
 });
+  */

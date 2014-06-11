@@ -104,10 +104,12 @@ exports.getCourseApplAndCourse = function(req,res,next){
    // prints "The creator is Aaron"
    })
    */
-  CourseAppl.findOne({_id: { "$oid" : "5398351ec3e400d01841878a"}})
-    .populate(courseId)
+  console.log("req.body: " + JSON.stringify(req.params.id));
+  CourseAppl.findOne({_id: req.params.id})
+    .populate("courseId")
     .exec(function(err,courseAppl){
       if(err){}
+      res.send(courseAppl);
       console.log("getCourseApplAndCourse: " + JSON.stringify(courseAppl));
     })
 }

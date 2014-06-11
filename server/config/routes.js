@@ -49,7 +49,7 @@ module.exports = function(app) {
   // course application
   app.get('/api/course-appls', courseAppls.getCourseAppls);
   app.get('/api/courses/:courseId/course-appls', courseAppls.getCourseApplsByCourseId);
-  app.get('/api/course-appls/:id', courseAppls.getCourseApplById);
+  app.get('/api/course-appls/:id', courseAppls.getCourseApplAndCourse);
   app.post('/api/course-appls', courseAppls.createCourseAppl);
 
   app.get('/partials/*', function(req, res) {
