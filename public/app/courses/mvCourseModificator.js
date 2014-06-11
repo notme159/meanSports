@@ -13,20 +13,17 @@ angular.module('app').factory('mvCourseModificator', function (mvCourse, mvCours
     },
 
     signToCourse: function (courseApplData) {
+
       var dfd = $q.defer();
 
+      var newCourseAppl = new mvCourseAppl({/*userId: courseApplData.user._id,*/ courseId: courseApplData.course._id, signed: courseApplData.signed});
+      //var courseToEdit = courseApplData.course;
 
-      // create courseappl $save
-      // update user push to array courseappl $update
-      // update course push to array courseappl $update
-
-      var newCourseAppl = new mvCourseAppl({userId: courseApplData.user._id, courseId: courseApplData.course._id, signed: courseApplData.signed});
-      var courseToEdit = courseApplData.course;
-
-      console.log("courseApplData: " + JSON.stringify(courseApplData));
+      //console.log("courseApplData: " + JSON.stringify(courseApplData));
 
       newCourseAppl.$save().then(function (response) {
-        courseToEdit.courseAppls.push(response._id);
+        dfd.resolve();
+        //courseToEdit.courseAppls.push(response._id);
 //        var completeCourse = mvCourse(courseToEdit);
 
         /*
@@ -41,16 +38,16 @@ angular.module('app').factory('mvCourseModificator', function (mvCourse, mvCours
          },
          */
 
-        $http.put('update-course', courseToEdit).success(function() {
-          dfd.resolve();
-        });
+        //$http.put('update-course', courseToEdit).success(function() {
+        //  dfd.resolve();
+        //});
 
         //console.log("completeCourse coz je angularresourse: " + JSON.stringify(completeCourse));
 
 //        completeCourse.$update(courseToEdit).then(function (response) {
           //dfd.resolve();
         }, function(response) {
-          console.log("chyba v course update " + response.data.reason);
+          console.log("chyba v courseAppl update " + response.data.reason);
           dfd.reject(response.data.reason);
         });
       /*}, function (response) {

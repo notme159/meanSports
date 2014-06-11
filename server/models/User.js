@@ -7,8 +7,8 @@ var userSchema = mongoose.Schema({
   username: {type: String, required: '{PATH} is required!', unique: true},
   salt: {type: String, required: '{PATH} is required!'},
   hashed_pwd: {type: String, required: '{PATH} is required!'},
-  roles: [String],
-  courseAppls: [mongoose.Schema.Types.ObjectId]
+  roles: [String]//,
+  //courseAppls: [mongoose.Schema.Types.ObjectId]
 });
 userSchema.methods = {
   authenticate: function (passwordToMatch) {

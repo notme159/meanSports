@@ -15,8 +15,28 @@ exports.getCourseApplById = function (req, res) {
 };
 
 exports.createCourseAppl = function (req, res, next) {
-  var courseApplData = req.body;
-  CourseAppl.create(courseApplData, function (err, courseAppl) {
+  /*var Tank = mongoose.model('Tank', yourSchema);
+
+   var small = new Tank({ size: 'small' });
+   small.save(function (err) {
+   if (err) return handleError(err);
+   // saved!
+   })
+   */
+
+  var courseApplData = new CourseAppl(req.body); //courseId signed
+
+  courseApplData.save(function(err,courseAppl){
+    if (err) {
+      console.log("courseAppl save error" + JSON.stringify(err));
+      res.status=400;
+      return res.send({reason: err.toString()});
+    }
+    res.send(courseAppl);
+
+  });
+
+  /*CourseAppl.create(courseApplData, function (err, courseAppl) {
     if (err) {
       if (err.toString().indexOf('E11000') > -1) {
         err = new Error('Duplicate Sign Up!');
@@ -26,6 +46,7 @@ exports.createCourseAppl = function (req, res, next) {
     }
     res.send(courseAppl);
   });
+  */
 };
 
 exports.getCourseApplsByCourseId = function (req, res, next) {
@@ -70,4 +91,23 @@ exports.getCourseApplsByCourseId = function (req, res, next) {
 
   });
 
+};
+
+exports.getCourseApplAndCourse = function(req,res,next){
+  /*
+   Story
+   .findOne({ title: /Nintendo/i })
+   .populate('_creator') // <--
+   .exec(function (err, story) {
+   if (err) ..
+   console.log('The creator is %s', story._creator.name);
+   // prints "The creator is Aaron"
+   })
+   */
+  CourseAppl.findOne({_id: { "$oid" : "5398351ec3e400d01841878a"}})
+    .populate(courseId)
+    .exec(function(err,courseAppl){
+      if(err){}
+      console.log("getCourseApplAndCourse: " + JSON.stringify(courseAppl));
+    })
 }

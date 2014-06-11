@@ -1,8 +1,9 @@
 var mongoose = require('mongoose');
 
 var courseApplSchema = mongoose.Schema({
-  userId: {type: mongoose.Schema.Types.ObjectId, required: '{PATH} is required!'},
-  courseId: {type: mongoose.Schema.Types.ObjectId, required: '{PATH} is required!'},
+  //userId: {type: mongoose.Schema.Types.ObjectId, required: '{PATH} is required!'},
+  //courseId: {type: mongoose.Schema.Types.ObjectId, required: '{PATH} is required!'},
+  courseId: {type: mongoose.Schema.Types.ObjectId, ref: 'Course'},
   signed: {type: Date, required: '{PATH} is required!', default: Date.now},
   paidFrom: Date,
   paidTo: Date,

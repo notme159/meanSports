@@ -5,7 +5,8 @@ var courseSchema = mongoose.Schema({
   featured: {type: Boolean, required: '{PATH} is required!'},
   published: {type: Date, required: '{PATH} is required!'},
   tags: [String],
-  courseAppls: [mongoose.Schema.Types.ObjectId]
+  //courseAppls: [mongoose.Schema.Types.ObjectId]
+  courseAppls: [{ type: mongoose.Schema.Types.ObjectId, ref: 'CourseAppl' }]
 });
 
 var Course = mongoose.model('Course', courseSchema);
