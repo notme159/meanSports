@@ -1,17 +1,15 @@
-//
-   Created by Jan on 6/11/2014.
-
 .container
   .panel.panel-primary
     .panel-heading Course Application Info
     .panel-body
-      h1 course application id: {{courseAppl._id}}
-      h3 signed on {{courseAppl.signed | date}}
+      h1 id: {{courseAppl._id}}
+      h3 signed: {{courseAppl.signed | date}}
   .panel.panel-primary
     .panel-heading Course Info
     .panel-body
-      p courseId: {{courseAppl.courseId._id}}
-      p course title: {{courseAppl.courseId.title}}
-      p featured: {{courseAppl.courseId.featured}}
-      p published: {{courseAppl.courseId.published | date:'medium'}}
-      span(ng-repeat="tag in courseAppl.courseId.tags"){{tag}} &nbsp
+      p id: {{courseAppl.courseParent._id}}
+      p course title: {{courseAppl.courseParent.title}}
+      p featured: {{courseAppl.courseParent.featured}}
+      p published: {{courseAppl.courseParent.published | date:'medium'}}
+      p Tags:&nbsp
+        span(ng-repeat="tag in courseAppl.courseParent.tags"){{tag}} &nbsp
