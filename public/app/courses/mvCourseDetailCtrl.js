@@ -14,10 +14,11 @@ angular.module('app').controller('mvCourseDetailCtrl', function ($scope, mvCours
     var userId = mvIdentity.currentUser._id;
     var courseId = $scope.course._id;
 
-    console.log("user id = " + JSON.stringify(mvIdentity.currentUser, null, 4));
-    console.log("course id = " + JSON.stringify($scope.course, null, 4));
+    //console.log("user id = " + JSON.stringify(mvIdentity.currentUser, null, 4));
+    //console.log("course id = " + JSON.stringify($scope.course, null, 4));
 
-    mvCourseModificator.signToCourse({userId: userId, courseId: courseId, signed: new Date()}).then(function () {
+    //mvCourseModificator.signToCourse({userId: userId, courseId: courseId, signed: new Date()}).then(function () {
+    mvCourseModificator.signToCourse({user: mvIdentity.currentUser, course: $scope.course, signed: new Date()}).then(function () {
       mvNotifier.notify('Signed to ' + $scope.course.title);
     }, function (reason) {
       mvNotifier.error(reason);
