@@ -3,14 +3,8 @@ var User = require('mongoose').model('User');
 var _ = require('underscore');
 
 exports.getCourseAppls = function (req, res) {
-  CourseAppl.find({}).exec(function (err, collection) {
-    res.send(collection);
-  });
-};
-
-exports.getCourseApplById = function (req, res) {
-  CourseAppl.findOne({courseId: req.params.id}).exec(function (err, courseAppl) {
-    res.send(courseAppl);
+  CourseAppl.find({}).exec(function (err, courseAppls) {
+    res.send(courseAppls);
   });
 };
 
@@ -25,12 +19,14 @@ exports.createCourseAppl = function (req, res, next) {
   });
 }
 
-exports.getCourseApplAndCourse = function (req, res, next) {
+exports.getCourseApplById = function (req, res, next) {
   CourseAppl.findOne({_id: req.params.id})
     .populate("courseParent")
+    .populate("userParent")
     .exec(function (err, courseAppl) {
       if (err) {
       }
+      console.log(JSON.stringify(courseAppl));
       res.send(courseAppl);
     })
 };

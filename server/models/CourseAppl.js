@@ -17,7 +17,7 @@ zkusit najit course appl podle course id u kurzu najit curseAppls.. a pak resit 
 
 
 var courseApplSchema = mongoose.Schema({
-  //userParent: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+  userParent: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   //courseId: {type: mongoose.Schema.Types.ObjectId, required: '{PATH} is required!'},
   courseParent: {type: mongoose.Schema.Types.ObjectId, ref: 'Course'},
   signed: {type: Date, required: '{PATH} is required!', default: Date.now},

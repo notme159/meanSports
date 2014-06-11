@@ -13,7 +13,7 @@ angular.module('app').factory('mvCourseModificator', function (mvCourse, mvCours
 
     signToCourse: function (courseApplData) {
       var dfd = $q.defer();
-      var newCourseAppl = new mvCourseAppl({/*userId: courseApplData.user._id,*/ courseParent: courseApplData.course._id, signed: courseApplData.signed});
+      var newCourseAppl = new mvCourseAppl({userParent: courseApplData.user._id, courseParent: courseApplData.course._id, signed: courseApplData.signed});
       newCourseAppl.$save().then(function (response) {
         dfd.resolve();
         }, function(response) {

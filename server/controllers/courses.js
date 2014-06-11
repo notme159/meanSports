@@ -22,7 +22,7 @@ exports.createCourse = function(req, res, next) {
         res.send(course);
     });
 };
-
+/*
 exports.updateCourse = function(req, res, next) {
   console.log(":::::::::" + JSON.stringify(req.body.courseAppls));
   Course.update({_id: req.params.id}, {$push: {courseAppls: new ObjectId(req.body.courseAppls[0])}}, function (err, note) {
@@ -34,7 +34,7 @@ exports.updateCourse = function(req, res, next) {
     }
     res.send(true);
   });
-};
+};*/
 
 exports.deleteCourse = function(req,res,next){
   // todo

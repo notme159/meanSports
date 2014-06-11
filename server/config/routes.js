@@ -35,9 +35,8 @@ module.exports = function(app) {
   app.get('/api/courses', courses.getCourses);
   app.get('/api/courses/:id', courses.getCourseById);
   app.post('/api/courses', courses.createCourse);
-  app.put('/api/courses/:id', courses.updateCourse);
+  //app.put('/api/courses/:id', courses.updateCourse);
   app.delete('/api/courses/:id', courses.deleteCourse);
-  app.put('/courses/update-course', courses.updateCourse);
 
   // notes
   app.get('/api/notes', notes.getNotes);
@@ -48,7 +47,7 @@ module.exports = function(app) {
 
   // course application
   app.get('/api/course-appls', courseAppls.getCourseAppls);
-  app.get('/api/course-appls/:id', courseAppls.getCourseApplAndCourse);
+  app.get('/api/course-appls/:id', courseAppls.getCourseApplById);
   app.post('/api/course-appls', courseAppls.createCourseAppl);
   //app.get('/api/courses/:courseId/course-appls', courseAppls.getCourseApplsByCourseId);
 

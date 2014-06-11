@@ -13,3 +13,12 @@
       p published: {{courseAppl.courseParent.published | date:'medium'}}
       p Tags:&nbsp
         span(ng-repeat="tag in courseAppl.courseParent.tags"){{tag}} &nbsp
+  .panel.panel-primary
+    .panel-heading User Info
+    .panel-body
+      p id: {{courseAppl.userParent._id}}
+      p first name: {{courseAppl.userParent.firstName}}
+      p last name: {{courseAppl.userParent.lastName}}
+      p username: {{courseAppl.userParent.username}}
+      p Roles:&nbsp
+        span(ng-repeat="role in courseAppl.userParent.roles"){{role}} &nbsp
