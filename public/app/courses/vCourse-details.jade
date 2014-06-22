@@ -11,11 +11,11 @@
         .panel-body
           div(ng-repeat="tag in course.tags") {{tag}}
   // not implemented yet, was buggy w/o populations
-  .panel.panel-primary
+  .panel.panel-primary(ng-constroller="mvCourseAppls
     .panel-heading Participants
     .panel-body
       div(ng-repeat="courseAppl in courseAppls") {{courseAppl.userFirst}} {{courseAppl.lastName}} signed: {{courseAppl.signed | date:'medium'}}
   .pull-right
     button.btn.btn-primary(ng-click="signToCourse()", ) Sign Up
     | &nbsp;
-    button.btn.btn-primary(ng-click="showParticipants()", ) Show Participants
+    a(href="/courses/{{course._id}}/course-appls") Show Participants

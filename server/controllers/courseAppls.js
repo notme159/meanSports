@@ -1,14 +1,18 @@
 var CourseAppl = require('mongoose').model('CourseAppl');
 var User = require('mongoose').model('User');
-var _ = require('underscore');
+//var _ = require('underscore');
 
+// get all courseAppls and course parent
 exports.getCourseAppls = function (req, res) {
-  CourseAppl.find({}).exec(function (err, courseAppls) {
+  CourseAppl.find({})
+    .populate("courseParent")
+    .exec(function (err, courseAppls) {
     res.send(courseAppls);
   });
 };
 
 exports.createCourseAppl = function (req, res, next) {
+  // todo musim delat new? zkus bez toho, vim ze to failnulo na save, ale..
   var courseAppl = new CourseAppl(req.body);
   courseAppl.save(function (err, courseAppl) {
     if (err) {
@@ -19,6 +23,7 @@ exports.createCourseAppl = function (req, res, next) {
   });
 }
 
+// get courseAppl with course and user parents by courseApplId
 exports.getCourseApplById = function (req, res, next) {
   CourseAppl.findOne({_id: req.params.id})
     .populate("courseParent")
@@ -30,6 +35,8 @@ exports.getCourseApplById = function (req, res, next) {
       res.send(courseAppl);
     })
 };
+
+
 
 /*CourseAppl.create(courseApplData, function (err, courseAppl) {
  if (err) {

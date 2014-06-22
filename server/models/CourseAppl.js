@@ -1,21 +1,5 @@
 var mongoose = require('mongoose');
 
-/*
-READ
-READ
-courseParent ok
-zkusit najit course appl podle course id u kurzu najit curseAppls.. a pak resit pridani usera
- */
-
-
-
-
-
-
-
-
-
-
 var courseApplSchema = mongoose.Schema({
   userParent: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   //courseId: {type: mongoose.Schema.Types.ObjectId, required: '{PATH} is required!'},

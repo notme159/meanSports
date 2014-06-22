@@ -4,7 +4,9 @@ angular.module('app').factory('mvAuth', function($http, mvIdentity, $q, mvUser) 
       var dfd = $q.defer();
       $http.post('/login', {username:username, password:password}).then(function(response) {
         if(response.data.success) {
+          // resource bo tam pridavam isAdmin metodu
           var user = new mvUser();
+          // rozsirim user obj o tu metodu
           angular.extend(user, response.data.user);
           mvIdentity.currentUser = user;
           dfd.resolve(true);
