@@ -1,4 +1,4 @@
-angular.module('app').controller('mvProfileCtrl', function($scope, mvAuth, mvIdentity, mvNotifier) {
+angular.module('app').controller('mvProfileCtrl', function($scope, mvAuth, mvIdentity, msNotifier) {
   $scope.email = mvIdentity.currentUser.username;
   $scope.fname = mvIdentity.currentUser.firstName;
   $scope.lname = mvIdentity.currentUser.lastName;
@@ -14,9 +14,9 @@ angular.module('app').controller('mvProfileCtrl', function($scope, mvAuth, mvIde
     }
 
     mvAuth.updateCurrentUser(newUserData).then(function() {
-      mvNotifier.notify('Your user account has been updated');
+      msNotifier.notify('Your user account has been updated');
     }, function(reason) {
-      mvNotifier.error(reason);
+      msNotifier.error(reason);
     });
   };
 });

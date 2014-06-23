@@ -1,12 +1,12 @@
-angular.module('app').controller('mvNavBarLoginCtrl', function($scope, $http, mvIdentity, mvNotifier, mvAuth, $location, $route) {
+angular.module('app').controller('mvNavBarLoginCtrl', function($scope, $http, mvIdentity, msNotifier, mvAuth, $location, $route) {
   $scope.identity = mvIdentity;
   $scope.signin = function(username, password) {
     if (username) {
       mvAuth.authenticateUser(username, password).then(function (success) {
         if (success) {
-          mvNotifier.notify('You have successfully signed in!');
+          msNotifier.notify('You have successfully signed in!');
         } else {
-          mvNotifier.error('Username/Password combination incorrect');
+          msNotifier.error('Username/Password combination incorrect');
         }
       });
     }
@@ -16,7 +16,7 @@ angular.module('app').controller('mvNavBarLoginCtrl', function($scope, $http, mv
     mvAuth.logoutUser().then(function() {
       $scope.username = "";
       $scope.password = "";
-      mvNotifier.warning('You have successfully signed out!');
+      msNotifier.warning('You have successfully signed out!');
       $location.path('/');
       $scope.$apply();
       window.location.reload(true);

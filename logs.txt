@@ -23,7 +23,7 @@
 2013-11-26T19:45:57.990801+00:00 heroku[router]: at=info method=GET path=/vendor/angular-route/angular-route.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=19ms service=16ms status=200 bytes=30661
 2013-11-26T19:45:57.918969+00:00 app[web.1]: [90mGET /app/main/mvMainCtrl.js [32m200 [90m8ms - 1.52kb[0m
 2013-11-26T19:45:58.018226+00:00 app[web.1]: [90mGET /app/account/mvNavBarLoginCtrl.js [32m200 [90m5ms - 719b[0m
-2013-11-26T19:45:58.058798+00:00 app[web.1]: [90mGET /app/common/mvNotifier.js [32m200 [90m4ms - 228b[0m
+2013-11-26T19:45:58.058798+00:00 app[web.1]: [90mGET /app/common/msNotifier.js [32m200 [90m4ms - 228b[0m
 2013-11-26T19:45:58.174832+00:00 heroku[router]: at=info method=GET path=/app/account/mvIdentity.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=2ms service=41ms status=200 bytes=488
 2013-11-26T19:45:58.170396+00:00 app[web.1]: [90mGET /app/account/mvIdentity.js [32m200 [90m38ms - 488b[0m
 2013-11-26T19:45:58.493238+00:00 heroku[router]: at=info method=GET path=/app/admin/mvUserListCtrl.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=2ms service=6ms status=200 bytes=116
@@ -73,7 +73,7 @@
 2013-11-26T19:46:49.905679+00:00 app[web.1]: [90mGET /app/account/mvIdentity.js [32m200 [90m3ms - 488b[0m
 2013-11-26T19:46:49.918370+00:00 app[web.1]: [90mGET /app/account/mvNavBarLoginCtrl.js [32m200 [90m5ms - 719b[0m
 2013-11-26T19:46:49.907255+00:00 heroku[router]: at=info method=GET path=/app/account/mvIdentity.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=4ms service=5ms status=200 bytes=488
-2013-11-26T19:46:50.010572+00:00 app[web.1]: [90mGET /app/common/mvNotifier.js [32m200 [90m7ms - 228b[0m
+2013-11-26T19:46:50.010572+00:00 app[web.1]: [90mGET /app/common/msNotifier.js [32m200 [90m7ms - 228b[0m
 2013-11-26T19:46:49.217627+00:00 heroku[router]: at=info method=GET path=/vendor/toastr/toastr.css host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=2ms service=48ms status=200 bytes=6776
 2013-11-26T19:46:50.273229+00:00 app[web.1]: [90mGET /app/admin/mvUserListCtrl.js [32m200 [90m11ms - 116b[0m
 2013-11-26T19:46:50.264236+00:00 app[web.1]: [90mGET /app/account/mvAuth.js [32m200 [90m16ms - 1016b[0m

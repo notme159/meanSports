@@ -1,4 +1,4 @@
-angular.module('app').controller('mvCourseCreateCtrl', function ($scope, mvNotifier, $route, mvCourseModificator) {
+angular.module('app').controller('mvCourseCreateCtrl', function ($scope, msNotifier, $route, mvCourseModificator) {
   $scope.createNewCourse = function () {
 
     var featured;
@@ -18,9 +18,9 @@ angular.module('app').controller('mvCourseCreateCtrl', function ($scope, mvNotif
     console.log(newCourseData);
 
     mvCourseModificator.createCourse(newCourseData).then(function () {
-      mvNotifier.notify('Course created!');
+      msNotifier.notify('Course created!');
     }, function (reason) {
-      mvNotifier.error(reason);
+      msNotifier.error(reason);
     });
 
 

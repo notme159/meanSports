@@ -1,12 +1,12 @@
-angular.module('app').controller('mvCourseDetailCtrl', function ($scope, mvCourse, $routeParams, mvIdentity, mvCourseModificator, mvNotifier, $http) {
+angular.module('app').controller('mvCourseDetailCtrl', function ($scope, mvCourse, $routeParams, mvIdentity, mvCourseModificator, msNotifier) {
 
   $scope.course = mvCourse.get({_id: $routeParams.id});
 
   $scope.signToCourse = function () {
     mvCourseModificator.signToCourse({user: mvIdentity.currentUser, course: $scope.course, signed: new Date()}).then(function () {
-      mvNotifier.notify('Signed to ' + $scope.course.title);
+      msNotifier.notify('Signed to ' + $scope.course.title);
     }, function (reason) {
-      mvNotifier.error(reason);
+      msNotifier.error(reason);
     });
   };
 
