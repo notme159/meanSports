@@ -15,10 +15,5 @@ module.exports = function(config) {
   userModel.createDefaultUsers();
   courseModel.createDefaultCourses();
   noteModel.createDefaultNotes();
-
-
-
-
-
-  courseApplModel.createDefaultCourseAppls();
+  //courseApplModel.createDefaultCourseAppls();
 };

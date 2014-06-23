@@ -1,6 +1,7 @@
 angular.module('app').controller('msNoteListCtrl', function ($scope, msNote, msNoteModificator, msNotifier, $route) {
+
   $scope.notes = msNote.query();
-  console.log($scope.notes);
+
   $scope.deleteOldNote = function (id) {
     msNoteModificator.deleteNote({_id: id}).then(function () {
       msNotifier.notify('Note deleted');

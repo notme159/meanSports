@@ -7,24 +7,6 @@ var auth = require('./auth'),
   User = mongoose.model('User');
 
 module.exports = function(app) {
-
-  // todo smazat toto? vyhledat reference
-  app.get('/api/testing', testFunc);
-
-  function testFunc(req, res) {
-    res.send({test: "bro"});
-  }
-  app.get('/api/testing/:idtesting', testFuncSId);
-
-  function testFuncSId(req, res) {
-    res.send({testSId: req.params.idtesting});
-  }
-  app.get('/api/testing/:id/nono', testFuncSId);
-
-  function testFuncSId(req, res) {
-    res.send([{testSId: req.params.id}, {testSId2: req.params.id}]);
-  }
-
   // users
   app.get('/api/users', auth.requiresRole('admin'), users.getUsers);
   app.post('/api/users', users.createUser);

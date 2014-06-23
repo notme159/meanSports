@@ -10,7 +10,4 @@ angular.module('app').controller('msCourseDetailCtrl', function ($scope, msCours
     });
   };
 
-  /*$scope.courseAppls = $http.get('/courses/%s/course-appls', $routeParams.id).success(function() {
-   console.log("course appls in scope: " + JSON.stringify($scope.courseAppls));
-   });*/
 });

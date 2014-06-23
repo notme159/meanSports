@@ -16,9 +16,9 @@ angular.module('app').factory('msCourseModificator', function (msCourse, msCours
       var newCourseAppl = new msCourseAppl({userParent: courseApplData.user._id, courseParent: courseApplData.course._id, signed: courseApplData.signed});
       newCourseAppl.$save().then(function (response) {
         dfd.resolve();
-        }, function(response) {
-          dfd.reject(response.data.reason);
-        });
+      }, function (response) {
+        dfd.reject(response.data.reason);
+      });
       return dfd.promise;
     }
   };

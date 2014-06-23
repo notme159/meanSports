@@ -18,4 +18,3 @@ admin:
 add new course
 show all course application
 show all users
-
