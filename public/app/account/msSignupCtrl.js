@@ -1,4 +1,4 @@
-angular.module('app').controller('mvSignupCtrl', function($scope, msNotifier, $location, mvAuth) {
+angular.module('app').controller('msSignupCtrl', function($scope, msNotifier, $location, msAuth) {
   $scope.signup = function() {
     var newUserData = {
       username: $scope.email,
@@ -7,7 +7,7 @@ angular.module('app').controller('mvSignupCtrl', function($scope, msNotifier, $l
       lastName: $scope.lname
     };
 
-    mvAuth.createUser(newUserData).then(function() {
+    msAuth.createUser(newUserData).then(function() {
       msNotifier.notify('User account created!');
       $location.path('/');
     }, function(reason) {

@@ -1,6 +1,6 @@
-angular.module('app').controller('mvCourseListCtrl', function($scope, mvCourse) {
+angular.module('app').controller('msCourseListCtrl', function($scope, msCourse) {
 
-  $scope.courses = mvCourse.query();
+  $scope.courses = msCourse.query();
 
   $scope.sortOptions = [{value:"title",text: "Sort by Title"},
     {value: "published",text: "Sort by Publish Date"}];

@@ -1,7 +1,7 @@
-angular.module('app').factory('mvNoteModificator', function (mvNote, $q) {
+angular.module('app').factory('msNoteModificator', function (msNote, $q) {
   return {
     createNote: function (newNoteData) {
-      var newNote = new mvNote(newNoteData);
+      var newNote = new msNote(newNoteData);
       var dfd = $q.defer();
       newNote.$save().then(function () {
         dfd.resolve();
@@ -12,7 +12,7 @@ angular.module('app').factory('mvNoteModificator', function (mvNote, $q) {
     },
 
     deleteNote: function (id) {
-      var newNote = new mvNote(id);
+      var newNote = new msNote(id);
       console.log(newNote);
       var dfd = $q.defer();
       newNote.$delete(id).then(function () {
@@ -23,7 +23,7 @@ angular.module('app').factory('mvNoteModificator', function (mvNote, $q) {
       return dfd.promise;
     },
     updateNote: function (note) {
-      var newNote = new mvNote(note);
+      var newNote = new msNote(note);
       console.log(newNote);
       var dfd = $q.defer();
       newNote.$update(note).then(function () {

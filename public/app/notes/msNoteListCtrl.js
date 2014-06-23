@@ -1,8 +1,8 @@
-angular.module('app').controller('mvNoteListCtrl', function ($scope, mvNote, mvNoteModificator, msNotifier, $route) {
-  $scope.notes = mvNote.query();
+angular.module('app').controller('msNoteListCtrl', function ($scope, msNote, msNoteModificator, msNotifier, $route) {
+  $scope.notes = msNote.query();
   console.log($scope.notes);
   $scope.deleteOldNote = function (id) {
-    mvNoteModificator.deleteNote({_id: id}).then(function () {
+    msNoteModificator.deleteNote({_id: id}).then(function () {
       msNotifier.notify('Note deleted');
       $route.reload();
     }, function (reason) {
@@ -10,7 +10,7 @@ angular.module('app').controller('mvNoteListCtrl', function ($scope, mvNote, mvN
     });
   };
   $scope.editOldNote = function (note) {
-    mvNoteModificator.updateNote(note).then(function () {
+    msNoteModificator.updateNote(note).then(function () {
       msNotifier.notify('Note updated');
       $route.reload();
     }, function (reason) {
@@ -22,7 +22,7 @@ angular.module('app').controller('mvNoteListCtrl', function ($scope, mvNote, mvN
       noteName: $scope.noteName,
       noteContent: $scope.noteContent
     };
-    mvNoteModificator.createNote(newNoteData).then(function () {
+    msNoteModificator.createNote(newNoteData).then(function () {
       msNotifier.notify('Note created!');
     }, function (reason) {
       msNotifier.error(reason);

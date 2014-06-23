@@ -1,7 +1,7 @@
-angular.module('app').factory('mvCourseModificator', function (mvCourse, mvCourseAppl, $q, mvUser, mvIdentity, $http) {
+angular.module('app').factory('msCourseModificator', function (msCourse, msCourseAppl, $q, msUser, msIdentity, $http) {
   return {
     createCourse: function (newCourseData) {
-      var newCourse = new mvCourse(newCourseData);
+      var newCourse = new msCourse(newCourseData);
       var dfd = $q.defer();
       newCourse.$save().then(function () {
         dfd.resolve();
@@ -13,7 +13,7 @@ angular.module('app').factory('mvCourseModificator', function (mvCourse, mvCours
 
     signToCourse: function (courseApplData) {
       var dfd = $q.defer();
-      var newCourseAppl = new mvCourseAppl({userParent: courseApplData.user._id, courseParent: courseApplData.course._id, signed: courseApplData.signed});
+      var newCourseAppl = new msCourseAppl({userParent: courseApplData.user._id, courseParent: courseApplData.course._id, signed: courseApplData.signed});
       newCourseAppl.$save().then(function (response) {
         dfd.resolve();
         }, function(response) {

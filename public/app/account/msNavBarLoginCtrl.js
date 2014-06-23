@@ -1,8 +1,8 @@
-angular.module('app').controller('mvNavBarLoginCtrl', function($scope, $http, mvIdentity, msNotifier, mvAuth, $location, $route) {
-  $scope.identity = mvIdentity;
+angular.module('app').controller('msNavBarLoginCtrl', function($scope, $http, msIdentity, msNotifier, msAuth, $location, $route) {
+  $scope.identity = msIdentity;
   $scope.signin = function(username, password) {
     if (username) {
-      mvAuth.authenticateUser(username, password).then(function (success) {
+      msAuth.authenticateUser(username, password).then(function (success) {
         if (success) {
           msNotifier.notify('You have successfully signed in!');
         } else {
@@ -13,7 +13,7 @@ angular.module('app').controller('mvNavBarLoginCtrl', function($scope, $http, mv
   };
 
   $scope.signout = function() {
-    mvAuth.logoutUser().then(function() {
+    msAuth.logoutUser().then(function() {
       $scope.username = "";
       $scope.password = "";
       msNotifier.warning('You have successfully signed out!');

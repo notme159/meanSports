@@ -2,50 +2,44 @@ angular.module('app', ['ngResource', 'ngRoute', 'restangular']);
 
 angular.module('app').config(function ($routeProvider, $locationProvider) {
   var routeRoleChecks = {
-    admin: {auth: function (mvAuth) {
-      return mvAuth.authorizeCurrentUserForRoute('admin');
+    admin: {auth: function (msAuth) {
+      return msAuth.authorizeCurrentUserForRoute('admin');
     }},
-    user: {auth: function (mvAuth) {
-      return mvAuth.authorizeAuthenticatedUserForRoute();
+    user: {auth: function (msAuth) {
+      return msAuth.authorizeAuthenticatedUserForRoute();
     }}
   };
 
   $locationProvider.html5Mode(true);
   $routeProvider
     .when('/', { templateUrl: '/partials/main/vMain',
-      controller: 'mvMainCtrl'})
+      controller: 'msMainCtrl'})
     .when('/admin/users', { templateUrl: '/partials/admin/vUser-list',
-      controller: 'mvUserListCtrl', resolve: routeRoleChecks.admin
+      controller: 'msUserListCtrl', resolve: routeRoleChecks.admin
     }).when('/admin/addCourse', { templateUrl: '/partials/admin/vCourse-create',
-      controller: 'mvCourseCreateCtrl', resolve: routeRoleChecks.admin
+      controller: 'msCourseCreateCtrl', resolve: routeRoleChecks.admin
     }).when('/admin/course-appls', { templateUrl: '/partials/admin/vCourse-appl-list',
-      controller: 'mvCourseApplListCtrl', resolve: routeRoleChecks.admin
+      controller: 'msCourseApplListCtrl', resolve: routeRoleChecks.admin
     }).when('/admin/course-appls/:id', { templateUrl: '/partials/admin/vCourse-appl-details',
-      controller: 'mvCourseApplDetailCtrl', resolve: routeRoleChecks.admin
+      controller: 'msCourseApplDetailCtrl', resolve: routeRoleChecks.admin
     })
     .when('/signup', { templateUrl: '/partials/account/vSignup',
-      controller: 'mvSignupCtrl'
+      controller: 'msSignupCtrl'
     })
     .when('/profile', { templateUrl: '/partials/account/vProfile',
-      controller: 'mvProfileCtrl', resolve: routeRoleChecks.user
+      controller: 'msProfileCtrl', resolve: routeRoleChecks.user
     })
-//    .when('/course-appls', {templateUrl: '/partials/account/vCourse-appl-list',
-//      controller: 'mvCourseApplListCtrl', resolve: routeRoleChecks.user
-//    })
-//    .when('/course-appls/:id', {templateUrl: '/partials/account/vCourse-appl-details',
-//      controller: 'mvCourseApplDetailCtrl', resolve: routeRoleChecks.user
-//    })
     .when('/courses', { templateUrl: '/partials/courses/vCourse-list',
-      controller: 'mvCourseListCtrl'
+      controller: 'msCourseListCtrl'
     })
     .when('/courses/:id', { templateUrl: '/partials/courses/vCourse-details',
-      controller: 'mvCourseDetailCtrl'
+      controller: 'msCourseDetailCtrl'
     })
     .when('/notes', { templateUrl: '/partials/notes/vNote-list',
-      controller: 'mvNoteListCtrl'
+      controller: 'msNoteListCtrl'
     })
     .when('/notes/:id', { templateUrl: '/partials/notes/vNote-details',
-      controller: 'mvNoteDetailCtrl'
+      controller: 'msNoteDetailCtrl'
     });
 })
 ;

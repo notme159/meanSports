@@ -21,16 +21,16 @@
 2013-11-26T19:45:57.841830+00:00 app[web.1]: [90mGET /app/app.js [32m200 [90m2ms - 795b[0m
 2013-11-26T19:45:57.978892+00:00 app[web.1]: [90mGET /vendor/angular-route/angular-route.js [32m200 [90m4ms - 29.94kb[0m
 2013-11-26T19:45:57.990801+00:00 heroku[router]: at=info method=GET path=/vendor/angular-route/angular-route.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=19ms service=16ms status=200 bytes=30661
-2013-11-26T19:45:57.918969+00:00 app[web.1]: [90mGET /app/main/mvMainCtrl.js [32m200 [90m8ms - 1.52kb[0m
-2013-11-26T19:45:58.018226+00:00 app[web.1]: [90mGET /app/account/mvNavBarLoginCtrl.js [32m200 [90m5ms - 719b[0m
+2013-11-26T19:45:57.918969+00:00 app[web.1]: [90mGET /app/main/msMainCtrl.js [32m200 [90m8ms - 1.52kb[0m
+2013-11-26T19:45:58.018226+00:00 app[web.1]: [90mGET /app/account/msNavBarLoginCtrl.js [32m200 [90m5ms - 719b[0m
 2013-11-26T19:45:58.058798+00:00 app[web.1]: [90mGET /app/common/msNotifier.js [32m200 [90m4ms - 228b[0m
-2013-11-26T19:45:58.174832+00:00 heroku[router]: at=info method=GET path=/app/account/mvIdentity.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=2ms service=41ms status=200 bytes=488
-2013-11-26T19:45:58.170396+00:00 app[web.1]: [90mGET /app/account/mvIdentity.js [32m200 [90m38ms - 488b[0m
-2013-11-26T19:45:58.493238+00:00 heroku[router]: at=info method=GET path=/app/admin/mvUserListCtrl.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=2ms service=6ms status=200 bytes=116
-2013-11-26T19:45:58.487492+00:00 app[web.1]: [90mGET /app/admin/mvUserListCtrl.js [32m200 [90m2ms - 116b[0m
-2013-11-26T19:45:58.599277+00:00 heroku[router]: at=info method=GET path=/app/account/mvAuth.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=4ms service=10ms status=200 bytes=1016
-2013-11-26T19:45:58.593220+00:00 app[web.1]: [90mGET /app/account/mvAuth.js [32m200 [90m4ms - 1016b[0m
-2013-11-26T19:45:58.929723+00:00 app[web.1]: [90mGET /app/account/mvUser.js [32m200 [90m1ms - 273b[0m
+2013-11-26T19:45:58.174832+00:00 heroku[router]: at=info method=GET path=/app/account/msIdentity.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=2ms service=41ms status=200 bytes=488
+2013-11-26T19:45:58.170396+00:00 app[web.1]: [90mGET /app/account/msIdentity.js [32m200 [90m38ms - 488b[0m
+2013-11-26T19:45:58.493238+00:00 heroku[router]: at=info method=GET path=/app/admin/msUserListCtrl.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=2ms service=6ms status=200 bytes=116
+2013-11-26T19:45:58.487492+00:00 app[web.1]: [90mGET /app/admin/msUserListCtrl.js [32m200 [90m2ms - 116b[0m
+2013-11-26T19:45:58.599277+00:00 heroku[router]: at=info method=GET path=/app/account/msAuth.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=4ms service=10ms status=200 bytes=1016
+2013-11-26T19:45:58.593220+00:00 app[web.1]: [90mGET /app/account/msAuth.js [32m200 [90m4ms - 1016b[0m
+2013-11-26T19:45:58.929723+00:00 app[web.1]: [90mGET /app/account/msUser.js [32m200 [90m1ms - 273b[0m
 2013-11-26T19:45:59.194854+00:00 app[web.1]: [90mGET /partials/account/navbar-login [32m200 [90m34ms - 873b[0m
 2013-11-26T19:45:59.245332+00:00 app[web.1]: [90mGET /favicon.ico [32m200 [90m3ms - 822b[0m
 2013-11-26T19:45:59.769537+00:00 app[web.1]: [90mGET /partials/main/main [32m200 [90m33ms - 389b[0m
@@ -38,7 +38,7 @@
 2013-11-26T19:45:59.905116+00:00 heroku[router]: at=info method=GET path=/partials/main/featured-courses host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=3ms service=32ms status=200 bytes=252
 2013-11-26T19:45:59.900490+00:00 app[web.1]: [90mGET /partials/main/featured-courses [32m200 [90m26ms - 252b[0m
 2013-11-26T19:45:57.736265+00:00 heroku[router]: at=info method=GET path=/vendor/toastr/toastr.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=2ms service=15ms status=200 bytes=7734
-2013-11-26T19:45:58.936116+00:00 heroku[router]: at=info method=GET path=/app/account/mvUser.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=5ms service=6ms status=200 bytes=273
+2013-11-26T19:45:58.936116+00:00 heroku[router]: at=info method=GET path=/app/account/msUser.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=5ms service=6ms status=200 bytes=273
 2013-11-26T19:45:59.784231+00:00 heroku[router]: at=info method=GET path=/partials/main/main host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=6ms service=46ms status=200 bytes=389
 2013-11-26T19:45:57.426397+00:00 heroku[router]: at=info method=GET path=/vendor/toastr/toastr.css host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=5ms service=35ms status=200 bytes=6776
 2013-11-26T19:45:59.201357+00:00 heroku[router]: at=info method=GET path=/partials/account/navbar-login host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=7ms service=40ms status=200 bytes=873
@@ -69,18 +69,18 @@
 2013-11-26T19:46:49.700522+00:00 app[web.1]: [90mGET /vendor/angular-route/angular-route.js [32m200 [90m4ms - 29.94kb[0m
 2013-11-26T19:46:49.702721+00:00 heroku[router]: at=info method=GET path=/vendor/angular-route/angular-route.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=2ms service=8ms status=200 bytes=30661
 2013-11-26T19:46:49.786235+00:00 app[web.1]: [90mGET /app/app.js [32m200 [90m10ms - 795b[0m
-2013-11-26T19:46:49.909943+00:00 app[web.1]: [90mGET /app/main/mvMainCtrl.js [32m200 [90m3ms - 1.52kb[0m
-2013-11-26T19:46:49.905679+00:00 app[web.1]: [90mGET /app/account/mvIdentity.js [32m200 [90m3ms - 488b[0m
-2013-11-26T19:46:49.918370+00:00 app[web.1]: [90mGET /app/account/mvNavBarLoginCtrl.js [32m200 [90m5ms - 719b[0m
-2013-11-26T19:46:49.907255+00:00 heroku[router]: at=info method=GET path=/app/account/mvIdentity.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=4ms service=5ms status=200 bytes=488
+2013-11-26T19:46:49.909943+00:00 app[web.1]: [90mGET /app/main/msMainCtrl.js [32m200 [90m3ms - 1.52kb[0m
+2013-11-26T19:46:49.905679+00:00 app[web.1]: [90mGET /app/account/msIdentity.js [32m200 [90m3ms - 488b[0m
+2013-11-26T19:46:49.918370+00:00 app[web.1]: [90mGET /app/account/msNavBarLoginCtrl.js [32m200 [90m5ms - 719b[0m
+2013-11-26T19:46:49.907255+00:00 heroku[router]: at=info method=GET path=/app/account/msIdentity.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=4ms service=5ms status=200 bytes=488
 2013-11-26T19:46:50.010572+00:00 app[web.1]: [90mGET /app/common/msNotifier.js [32m200 [90m7ms - 228b[0m
 2013-11-26T19:46:49.217627+00:00 heroku[router]: at=info method=GET path=/vendor/toastr/toastr.css host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=2ms service=48ms status=200 bytes=6776
-2013-11-26T19:46:50.273229+00:00 app[web.1]: [90mGET /app/admin/mvUserListCtrl.js [32m200 [90m11ms - 116b[0m
-2013-11-26T19:46:50.264236+00:00 app[web.1]: [90mGET /app/account/mvAuth.js [32m200 [90m16ms - 1016b[0m
-2013-11-26T19:46:50.236183+00:00 app[web.1]: [90mGET /app/account/mvUser.js [32m200 [90m2ms - 273b[0m
-2013-11-26T19:46:50.265663+00:00 heroku[router]: at=info method=GET path=/app/account/mvAuth.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=2ms service=19ms status=200 bytes=1016
+2013-11-26T19:46:50.273229+00:00 app[web.1]: [90mGET /app/admin/msUserListCtrl.js [32m200 [90m11ms - 116b[0m
+2013-11-26T19:46:50.264236+00:00 app[web.1]: [90mGET /app/account/msAuth.js [32m200 [90m16ms - 1016b[0m
+2013-11-26T19:46:50.236183+00:00 app[web.1]: [90mGET /app/account/msUser.js [32m200 [90m2ms - 273b[0m
+2013-11-26T19:46:50.265663+00:00 heroku[router]: at=info method=GET path=/app/account/msAuth.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=2ms service=19ms status=200 bytes=1016
 2013-11-26T19:46:50.966034+00:00 app[web.1]: [90mGET /partials/account/navbar-login [32m200 [90m46ms - 873b[0m
-2013-11-26T19:46:50.238830+00:00 heroku[router]: at=info method=GET path=/app/account/mvUser.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=2ms service=5ms status=200 bytes=273
+2013-11-26T19:46:50.238830+00:00 heroku[router]: at=info method=GET path=/app/account/msUser.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=2ms service=5ms status=200 bytes=273
 2013-11-26T19:46:51.081286+00:00 app[web.1]: [90mGET /partials/main/main [32m200 [90m15ms - 389b[0m
 2013-11-26T19:46:51.090907+00:00 heroku[router]: at=info method=GET path=/partials/main/main host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=12ms service=25ms status=200 bytes=389
 2013-11-26T19:46:51.198104+00:00 app[web.1]: [90mGET /partials/main/new-courses [32m200 [90m13ms - 324b[0m
@@ -91,11 +91,11 @@
 2013-11-26T19:47:24.578192+00:00 heroku[router]: at=error code=H12 desc="Request timeout" method=POST path=/login host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=1ms service=30002ms status=503 bytes=0
 2013-11-26T19:47:24.583170+00:00 app[web.1]: [90mPOST /login [32m200 [90m30006ms[0m
 2013-11-26T19:46:49.374657+00:00 heroku[router]: at=info method=GET path=/css/site.css host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=2ms service=205ms status=200 bytes=440
-2013-11-26T19:45:58.033716+00:00 heroku[router]: at=info method=GET path=/app/account/mvNavBarLoginCtrl.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=28ms service=22ms status=200 bytes=719
+2013-11-26T19:45:58.033716+00:00 heroku[router]: at=info method=GET path=/app/account/msNavBarLoginCtrl.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=28ms service=22ms status=200 bytes=719
 2013-11-26T19:45:57.577095+00:00 heroku[router]: at=info method=GET path=/vendor/jquery/jquery.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=4ms service=150ms status=200 bytes=242142
 2013-11-26T19:45:59.249621+00:00 heroku[router]: at=info method=GET path=/favicon.ico host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=8ms service=9ms status=200 bytes=822
 2013-11-26T19:46:49.372997+00:00 heroku[router]: at=info method=GET path=/vendor/bootstrap/dist/js/bootstrap.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=63ms service=93ms status=200 bytes=58327
-2013-11-26T19:46:49.926518+00:00 heroku[router]: at=info method=GET path=/app/account/mvNavBarLoginCtrl.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=5ms service=15ms status=200 bytes=719
+2013-11-26T19:46:49.926518+00:00 heroku[router]: at=info method=GET path=/app/account/msNavBarLoginCtrl.js host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=5ms service=15ms status=200 bytes=719
 2013-11-26T19:45:57.748225+00:00 heroku[router]: at=info method=GET path=/css/bootstrap.css host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=6ms service=23ms status=200 bytes=104594
 2013-11-26T19:48:32.438943+00:00 app[web.1]: [90mPOST /login [32m200 [90m30004ms[0m
 2013-11-26T19:48:32.433422+00:00 heroku[router]: at=error code=H12 desc="Request timeout" method=POST path=/login host=desolate-temple-3561.herokuapp.com fwd="174.52.5.95" dyno=web.1 connect=1ms service=30000ms status=503 bytes=0
