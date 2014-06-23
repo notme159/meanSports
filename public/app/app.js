@@ -18,6 +18,10 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
       controller: 'mvUserListCtrl', resolve: routeRoleChecks.admin
     }).when('/admin/addCourse', { templateUrl: '/partials/admin/vCourse-create',
       controller: 'mvCourseCreateCtrl', resolve: routeRoleChecks.admin
+    }).when('/admin/course-appls', { templateUrl: '/partials/admin/vCourse-appl-list',
+      controller: 'mvCourseApplListCtrl', resolve: routeRoleChecks.admin
+    }).when('/admin/course-appls/:id', { templateUrl: '/partials/admin/vCourse-appl-details',
+      controller: 'mvCourseApplDetailCtrl', resolve: routeRoleChecks.admin
     })
     .when('/signup', { templateUrl: '/partials/account/vSignup',
       controller: 'mvSignupCtrl'
@@ -25,12 +29,12 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
     .when('/profile', { templateUrl: '/partials/account/vProfile',
       controller: 'mvProfileCtrl', resolve: routeRoleChecks.user
     })
-    .when('/course-appls', {templateUrl: '/partials/account/vCourse-appl-list',
-    controller: 'mvCourseApplListCtrl', resolve: routeRoleChecks.user
-    })
-    .when('/course-appls/:id', {templateUrl: '/partials/account/vCourse-appl-details',
-      controller: 'mvCourseApplDetailCtrl', resolve: routeRoleChecks.user
-    })
+//    .when('/course-appls', {templateUrl: '/partials/account/vCourse-appl-list',
+//      controller: 'mvCourseApplListCtrl', resolve: routeRoleChecks.user
+//    })
+//    .when('/course-appls/:id', {templateUrl: '/partials/account/vCourse-appl-details',
+//      controller: 'mvCourseApplDetailCtrl', resolve: routeRoleChecks.user
+//    })
     .when('/courses', { templateUrl: '/partials/courses/vCourse-list',
       controller: 'mvCourseListCtrl'
     })
@@ -43,7 +47,8 @@ angular.module('app').config(function ($routeProvider, $locationProvider) {
     .when('/notes/:id', { templateUrl: '/partials/notes/vNote-details',
       controller: 'mvNoteDetailCtrl'
     });
-});
+})
+;
 
 angular.module('app').run(function ($rootScope, $location) {
   $rootScope.$on('$routeChangeError', function (evt, current, previous, rejection) {

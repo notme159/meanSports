@@ -18,9 +18,11 @@
           a(href="/admin/users") User Admin
         li(ng-show="identity.currentUser.isAdmin()")
           a(href="/admin/addCourse") Add Course
+        li(ng-show="identity.currentUser.isAdmin()")
+          a(href="/admin/course-appls") Show all course applications
         li
           a(href="/profile") Profile
-        li
-          a(href="/course-appls") My course applications
+        //li
+        //  a(href="/course-appls") Show all course applications
         li
           a(href="", ng-click="signout()") Sign Out
