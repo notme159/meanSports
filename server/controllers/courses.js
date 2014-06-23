@@ -27,7 +27,7 @@ exports.createCourse = function (req, res, next) {
   var courseData = req.body;
   Course.create(courseData, function (err, course) {
     if (err) {
-      res.status(400);
+      res.status(400); // bad req
       return res.send({reason: err.toString()});
     }
     res.send(course);
@@ -48,7 +48,7 @@ exports.createCourse = function (req, res, next) {
  };*/
 
 exports.deleteCourse = function (req, res, next) {
-  // todo
+  // todo, check jestli jsou courseAppls k tomu kurzu pred smazanim
 };
 
 

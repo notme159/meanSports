@@ -17,6 +17,7 @@ exports.createUser = function(req, res, next) {
       if(err.toString().indexOf('E11000') > -1) {
         err = new Error('Duplicate Username');
       }
+      // bad request
       res.status(400);
       return res.send({reason:err.toString()});
     }
@@ -33,6 +34,7 @@ exports.updateUser = function(req, res) {
   var userUpdates = req.body;
 
   if(req.user._id != userUpdates._id && !req.user.hasRole('admin')) {
+    // not authorized
     res.status(403);
     return res.end();
   }

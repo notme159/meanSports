@@ -16,7 +16,7 @@ exports.createCourseAppl = function (req, res, next) {
   var courseAppl = new CourseAppl(req.body);
   courseAppl.save(function (err, courseAppl) {
     if (err) {
-      res.status = 400;
+      res.status = 400; // bad req
       return res.send({reason: err.toString()});
     }
     res.send(courseAppl);

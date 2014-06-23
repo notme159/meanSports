@@ -8,18 +8,17 @@ var auth = require('./auth'),
 
 module.exports = function(app) {
 
+  // todo smazat toto? vyhledat reference
   app.get('/api/testing', testFunc);
 
   function testFunc(req, res) {
     res.send({test: "bro"});
   }
-
   app.get('/api/testing/:idtesting', testFuncSId);
 
   function testFuncSId(req, res) {
     res.send({testSId: req.params.idtesting});
   }
-
   app.get('/api/testing/:id/nono', testFuncSId);
 
   function testFuncSId(req, res) {
